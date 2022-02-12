@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "438313540061",
+    "project_id": "hometending",
+    "storage_bucket": "hometending.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438313540061:android:4a5afc28a24266edcc7e34",
+        "android_client_info": {
+          "package_name": "com.example.hometending"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438313540061-pf4o1jdjonrg0phu6j870a68t17np7m7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hometending",
+            "certificate_hash": "fb46502aa4a5f0e8e797032ceddf4eedd7541042"
+          }
+        },
+        {
+          "client_id": "438313540061-6e9k14uurhnaih94la2j7mjh3qqdko2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKkaurLyNlfmCKT2BmpM0onZVT_qitcYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438313540061-6e9k14uurhnaih94la2j7mjh3qqdko2a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "438313540061-52s5429toi337svr8ldigd0soufu00gr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hometending"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
