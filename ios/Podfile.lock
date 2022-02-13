@@ -1,9 +1,34 @@
 PODS:
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
+  - FBAEMKit (12.1.0):
+    - FBSDKCoreKit_Basics (= 12.1.0)
+  - FBSDKCoreKit (12.1.0):
+    - FBAEMKit (= 12.1.0)
+    - FBSDKCoreKit_Basics (= 12.1.0)
+  - FBSDKCoreKit_Basics (12.1.0)
+  - FBSDKLoginKit (12.1.0):
+    - FBSDKCoreKit (= 12.1.0)
+  - Firebase/Auth (8.0.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 8.0.0)
   - Firebase/CoreOnly (8.0.0):
     - FirebaseCore (= 8.0.0)
+  - firebase_auth (1.4.1):
+    - Firebase/Auth (= 8.0.0)
+    - firebase_core
+    - Flutter
   - firebase_core (1.3.0):
     - Firebase/CoreOnly (= 8.0.0)
     - Flutter
+  - FirebaseAuth (8.0.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GTMSessionFetcher/Core (~> 1.5)
   - FirebaseCore (8.0.0):
     - FirebaseCoreDiagnostics (~> 8.0)
     - GoogleUtilities/Environment (~> 7.4)
@@ -14,14 +39,40 @@ PODS:
     - GoogleUtilities/Logger (~> 7.6)
     - nanopb (~> 2.30908.0)
   - Flutter (1.0.0)
+  - flutter_facebook_auth (3.5.3):
+    - FBSDKCoreKit (~> 12.1.0)
+    - FBSDKLoginKit (~> 12.1.0)
+    - Flutter
+  - google_sign_in (0.0.1):
+    - Flutter
+    - GoogleSignIn (~> 5.0)
   - GoogleDataTransport (9.1.2):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleUtilities/AppDelegateSwizzler (7.6.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
   - GoogleUtilities/Environment (7.6.0):
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.6.0):
     - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.6.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.6.0)"
+  - GoogleUtilities/Reachability (7.6.0):
+    - GoogleUtilities/Logger
+  - GTMAppAuth (1.2.2):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher/Core (~> 1.5)
+  - GTMSessionFetcher/Core (1.7.0)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -30,33 +81,63 @@ PODS:
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
+  - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
+  - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
 
 SPEC REPOS:
   trunk:
+    - AppAuth
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
     - Firebase
+    - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
+    - GTMAppAuth
+    - GTMSessionFetcher
     - nanopb
     - PromisesObjC
 
 EXTERNAL SOURCES:
+  firebase_auth:
+    :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  flutter_facebook_auth:
+    :path: ".symlinks/plugins/flutter_facebook_auth/ios"
+  google_sign_in:
+    :path: ".symlinks/plugins/google_sign_in/ios"
 
 SPEC CHECKSUMS:
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  FBAEMKit: 56c0bb9b42e3747cd82b67934f0c2b19325382ea
+  FBSDKCoreKit: 75368765d9c2303073145a7925dfaa9d60bcd77b
+  FBSDKCoreKit_Basics: 39865aff97e5f6951a78fb3e89dc4460e35e1895
+  FBSDKLoginKit: e993f97c7cc794c5da4056d8aec3c3d66033a727
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
+  firebase_auth: 6532658f5a4f76be32cd5e7518753ebedd4544d2
   firebase_core: cda81ae37eda6df2bc2d16027fda527987c4bd33
+  FirebaseAuth: b8cd992fca5b53dc6eec09e873a3f375f000c5a1
   FirebaseCore: 3f09591d51292843e2a46f18358d60bf4e996255
   FirebaseCoreDiagnostics: 5daa63f1c1409d981a2d5007daa100b36eac6a34
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_facebook_auth: dfd6b2563406c538098e2127512d385c9ffd70ad
+  google_sign_in: de494e5e993986afae63e22a32441e30c35c9823
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
+  GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
+  GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
