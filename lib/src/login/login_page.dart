@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class LoginPage extends StatelessWidget {
               }),
               loginContainerForm(
                   0xffffffff, '구글', true, Colors.black, signInWithGoogle),
-              loginContainerForm(0xff000000, '애플', false, Colors.white, () {}),
+              loginContainerForm(0xff000000, '애플', false, Colors.white, signInWithApple),
               MaterialButton(
                   color: Colors.orangeAccent,
                   onPressed: () {
@@ -88,4 +89,22 @@ class LoginPage extends StatelessWidget {
     );
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
+
+  Future<UserCredential> signInWithApple() async {
+    final appleCredential = await SignInWithApple.getAppleIDCredential(
+      scopes: [
+        AppleIDAuthorizationScopes.email,
+        AppleIDAuthorizationScopes.fullName,
+      ],
+    );
+
+    final oauthCredential = OAuthProvider("apple.com").credential(
+      idToken: appleCredential.identityToken,
+      accessToken: appleCredential.authorizationCode,
+    );
+
+    return await FirebaseAuth.instance.signInWithCredential(oauthCredential);
+  }
+
+
 }
