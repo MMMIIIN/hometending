@@ -4,19 +4,22 @@ import 'package:hometending/src/home/controller/community_controller.dart';
 
 final CommunityController _communityController = Get.put(CommunityController());
 
-class CommunityPage extends StatefulWidget {
-  @override
-  _CommunityPageState createState() => _CommunityPageState();
-}
-
-class _CommunityPageState extends State<CommunityPage> {
+class CommunityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [
           Obx(
-            () => dropDownTap(),
+                () => dropDownTap(),
+          ),
+          Obx(
+                () => Expanded(
+              child:
+              _communityController.communityDropDownValue.value == '자유게시판'
+                  ? freeBoardContent()
+                  : Container(),
+            ),
           ),
         ],
       ),
@@ -33,6 +36,25 @@ class _CommunityPageState extends State<CommunityPage> {
       }).toList(),
       onChanged: (String? newValue) {
         _communityController.communityDropDownValue(newValue);
+      },
+    );
+  }
+
+  Widget freeBoardContent() {
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+          child: Container(
+            width: double.infinity,
+            height: 60,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all()
+            ),
+          ),
+        );
       },
     );
   }

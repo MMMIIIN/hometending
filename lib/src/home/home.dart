@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hometending/src/home/controller/home_controller.dart';
+import 'package:hometending/src/home/page/add_page/freeboard_add_page.dart';
 import 'package:hometending/src/home/page/community_page.dart';
 import 'package:hometending/src/home/page/home_page.dart';
 import 'package:hometending/src/home/page/information_page.dart';
@@ -14,7 +15,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Obx(() {
-          switch(_homeController.pageIndex.value){
+          switch (_homeController.pageIndex.value) {
             case 0:
               return HomePage();
             case 1:
@@ -55,6 +56,15 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: Obx(() => _homeController.pageIndex.value == 1
+          ? FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                Get.to(() => FreeBoardAddPage());
+              },
+              backgroundColor: Colors.orangeAccent,
+            )
+          : Container()),
     );
   }
 }
