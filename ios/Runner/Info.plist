@@ -36,9 +36,9 @@
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-    <string>246978444262231</string>
+    <string>SECRET</string>
     <key>FacebookClientToken</key>
-    <string>36d3098fc87e6f491072496b1846b302</string>
+    <string>SECRET</string>
     <key>FacebookDisplayName</key>
     <string>Hometending</string>
     <key>LSApplicationQueriesSchemes</key>
